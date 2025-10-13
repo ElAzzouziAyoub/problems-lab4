@@ -9,7 +9,7 @@ public class IntegerList {
   // -------------------------------------------------------
   public IntegerList(int size) {
     list = new int[size];
-    this.pointer = 0;
+    this.pointer = size;
   }
 
   // -------------------------------------------------------
@@ -18,6 +18,9 @@ public class IntegerList {
 
   public void increaseSize() {
     int[] new_list = new int[2 * list.length];
+    for (int i = 0; i < this.pointer; i++) {
+      new_list[i] = this.list[i];
+    }
     this.list = new_list;
   }
 
